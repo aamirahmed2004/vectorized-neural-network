@@ -1,4 +1,13 @@
-﻿#include "cuda_runtime.h"
+﻿/*
+ This is all old code from when I first had the idea for this project. I didn't get very far because of how daunting the project seemed. I have since rethought my approach, but I might reuse some of the code from before, so I'm leaving it here.
+*/
+
+/*
+Reference for commands to compile and run executable from root directory:
+	nvcc gpu/main.cu -o gpu/main; echo "----Output----"; gpu/main.exe
+*/
+
+#include "cuda_runtime.h"
 #include "device_launch_parameters.h"
 #include <iostream>
 #include <stdio.h>
@@ -196,11 +205,6 @@ void matrixMultiplicationTest()
 	printMatrix(&C);
 	cudaFree(A.elements); cudaFree(B.elements); cudaFree(C.elements);
 }
-
-/*
-	Reference for commands to compile and run executable from root directory:
-		nvcc gpu/main.cu -o gpu/main; echo "----Output----"; gpu/main.exe
-*/
 
 int main() {
 	 vectorMultiplicationTest();
